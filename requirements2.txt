@@ -1,0 +1,65 @@
+RAG-Based Semantic Quote Retrieval and Structured QA with Model Training
+Problem Statement
+Objective:
+You are tasked with building a semantic quote retrieval system powered by RAG (Retrieval 
+Augmented Generation) using the above dataset.
+The workflow includes fine-tuning a model on the dataset, integrating with a RAG pipeline, 
+evaluating RAG and deploying an interactive Streamlit app.
+Assignment Instructions
+1. Data Preparation
+• Download and explore the Abirate/english_quotes
+(https://huggingface.co/datasets/Abirate/english_quotes) dataset from 
+HuggingFace.
+• Preprocess and clean data as needed for model training (tokenization, lowercasing, 
+handling missing values, etc.).
+2. Model Fine-Tuning
+• Fine-tune a sentence embedding model (e.g., sentence-transformers) or a relevant 
+transformer (e.g., DistilBERT, MiniLM, or similar) on the quotes.
+o Task: Given a query (e.g., "quotes about hope by Oscar Wilde"), the model 
+should retrieve relevant quote, author, and tags.
+• Save the fine-tuned model.
+3. Build the RAG Pipeline
+• Implement a Retrieval Augmented Generation pipeline:
+o Use your fine-tuned model to encode and index the quotes (e.g., with FAISS, 
+ChromaDB, etc.).
+o Use a Large Language Model (e.g., OpenAI GPT-3.5/4, Llama2/3, or opensource) to answer natural language queries using retrieved quote context.
+4. RAG Evaluation 
+• Testing a RAG system consists of running a set of queries against the tool and 
+evaluating the output.
+• Use any ONE of the framework for RAG evaluation –
+o RAGAS
+o Quotient
+o Arize Phoenix
+5. Streamlit Application
+• Build a user-friendly Streamlit app that allows:
+o User to input natural language queries (e.g., “Show me quotes about courage 
+by women authors”)
+o System retrieves relevant entries from the fine-tuned + indexed dataset.
+o Structured JSON response displayed (quotes, authors, tags, summary).
+o Optionally, display source quotes and their similarity scores.
+6. Deliverables
+• Jupyter/Colab/Kaggle Notebook(s) or .py files for:
+o Data prep & model fine-tuning
+o RAG pipeline implementation
+o RAG evaluation
+o Streamlit app
+• Evaluation results: a short discussion.
+• README: Clear instructions on running your code, model architecture, design 
+decisions, and challenges.
+• A short video of a code walkthrough and testing.
+Example queries for evaluation:
+o “Quotes about insanity attributed to Einstein”
+o “Motivational quotes tagged ‘accomplishment’”
+o “All Oscar Wilde quotes with humor”
+Evaluation Criteria
+• Model training – as model gets well adapted to dataset 
+• RAG retrieval – extracting most relevant chunks or not
+• RAG Evaluation scores 
+• Proper response coming from Stramlit application
+• Documentation and demo video.
+Required Dataset
+• Use: Abirate/english_quotes
+Bonus (Optional):
+• Try multi-hop queries (e.g., “Quotes tagged with both ‘life’ and ‘love’ by 20thcentury authors”).
+• Provide download of JSON results.
+• Add visualizations of quote/author/tag distributions.
